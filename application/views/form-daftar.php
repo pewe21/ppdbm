@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="text-right">
-                    <button onclick="return confirm ('Yakin data yang kamu inputkan sudah benar?');" type="submit" class="btn btn-primary" name="save">Daftar Akun</button>
+                    <button onclick="return confirm ('Yakin data yang kamu inputkan sudah benar?');" type="submit" class="btn btn-primary" name="save">Daftar Akun <span class="fa fa-arrow-right"></span></button>
                 </div>
             </form>
         </div>

@@ -25,7 +25,7 @@
   <link href="<?= base_url() ?>assets/vendor/datepicker/datepicker3.css" rel="stylesheet">
   <!-- Template Main CSS File -->
   <link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <!-- =======================================================
   * Template Name: Lumia - v2.1.0
   * Template URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
