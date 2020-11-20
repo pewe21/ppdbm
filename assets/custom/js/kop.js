@@ -1,25 +1,26 @@
 $(function () {
-    $("#datepicker").datepicker();
-    $('#nisn').mask('0000000000');
-    $('#wa').mask('0800000000000');
+    $("#datepicker").datepicker(); //Masking For id datepicker
+    $('#nisn').mask('0000000000'); //Masking For id nisn
+    $('#wa').mask('0800000000000'); //Masking For id wa
 });
-
+// Function For Get Location a Province
 function getLokasi() {
     var $op1 = $("#provinsi");
 
     $.getJSON("daftar/provinsi", function (data) {
         $.each(data, function (i, field) {
 
-            $op1.append('<option value="' + field.id + '" data-prov="' + field.name + '">' + field.name + '</option>');
+            $op1.append('<option option value = "' + field.id + '" data-prov="' + field.name + '">' + field.name + '</option>');
 
         });
 
     });
 
 }
-
+//Execute Function getLocation()
 getLokasi();
 
+// If Province selection Re-change
 $("#provinsi").on("change", function (e) {
     e.preventDefault();
     var option = $('option:selected', this).val();
@@ -41,7 +42,7 @@ $("#provinsi").on("change", function (e) {
 
     }
 });
-
+// Function For Get City Location
 function getKota1(idpro) {
     var $op = $("#kota");
 
@@ -56,6 +57,9 @@ function getKota1(idpro) {
     });
 
 }
+
+//If Selection City Re-change
+
 $("#kota").on("change", function (e) {
     e.preventDefault();
     var option = $('option:selected', this).val();
@@ -72,6 +76,7 @@ $("#kota").on("change", function (e) {
     }
 });
 
+//Function For Get Distric Location
 
 function getkecamatan1(idpro) {
     var $op = $("#kecamatan");
@@ -86,6 +91,8 @@ function getkecamatan1(idpro) {
 
     });
 }
+
+//Same like City Re-Change but this is Distric
 
 $("#kecamatan").on("change", function (e) {
     e.preventDefault();
