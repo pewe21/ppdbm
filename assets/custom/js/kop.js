@@ -7,7 +7,7 @@ $(function () {
 function getLokasi() {
     var $op1 = $("#provinsi");
 
-    $.getJSON("provinsi", function (data) {
+    $.getJSON("daftar/provinsi", function (data) {
         $.each(data, function (i, field) {
 
             $op1.append('<option value="' + field.id + '" data-prov="' + field.name + '">' + field.name + '</option>');
@@ -45,7 +45,7 @@ $("#provinsi").on("change", function (e) {
 function getKota1(idpro) {
     var $op = $("#kota");
 
-    $.getJSON("kota/" + idpro, function (data) {
+    $.getJSON("daftar/kota/" + idpro, function (data) {
         $.each(data, function (i, field) {
 
 
@@ -76,7 +76,7 @@ $("#kota").on("change", function (e) {
 function getkecamatan1(idpro) {
     var $op = $("#kecamatan");
 
-    $.getJSON("kecamatan/" + idpro, function (data) {
+    $.getJSON("daftar/kecamatan/" + idpro, function (data) {
         $.each(data, function (i, field) {
 
 

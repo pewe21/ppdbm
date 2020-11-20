@@ -1,7 +1,7 @@
 <div class="container">
     <div class="col-lg-12 col-md-12">
         <div class="panel-body">
-            <form>
+            <form enctype="multipart/form-data" method="post">
                 <div class="row" style="margin-top: 90px;">
                     <div class="col-lg-6 col-md-6">
                         <div class="form-group">
@@ -22,6 +22,14 @@
                             <input type="text" class="form-control" id="datepicker" name="tanggal" readonly>
                         </div>
                         <div class="form-group">
+                            <label>Jenis Kelamin</label>
+                            <select class="form-control" name="jekel" required>
+                                <option value="">Pilih Jekel</option>
+                                <option value="L">Laki-Laki</option>
+                                <option value="P">Perempuan</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label>Agama</label>
                             <input type="text" class="form-control" name="agama" value="Islam" readonly>
                         </div>
@@ -38,15 +46,15 @@
                             <input type="text" class="form-control" name="nsm">
                         </div>
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="text" class="form-control" name="email" required>
-                        </div>
-                        <div class="form-group">
                             <label>No. Whatsapp</label>
                             <input type="text" id="wa" class="form-control" name="no_wa" placeholder="08xxx">
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="text" class="form-control" name="email" required>
+                        </div>
                         <div class="form-group">
                             <label>Provinsi</label>
                             <select class="form-control" name="provinsi" id="provinsi">
@@ -81,6 +89,9 @@
                             <input type="text" class="form-control" name="ibu">
                         </div>
                     </div>
+                </div>
+                <div class="text-right">
+                    <button onclick="return confirm ('Yakin data yang kamu inputkan sudah benar?');" type="submit" class="btn btn-primary" name="save">Daftar Akun</button>
                 </div>
             </form>
         </div>
