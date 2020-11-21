@@ -1,11 +1,13 @@
 $(function () {
-    $("#datepicker").datepicker(); //Masking For id datepicker
+    $("#datepicker").datepicker({
+
+    }); //Masking For id datepicker
     $('#nisn').mask('0000000000'); //Masking For id nisn
     $('#wa').mask('0800000000000'); //Masking For id wa
 });
 // Function For Get Location a Province
 function getLokasi() {
-    var $op1 = $("#provinsi");
+    var $op1 = $("#provinsii");
 
     $.getJSON("daftar/provinsi", function (data) {
         $.each(data, function (i, field) {
@@ -21,30 +23,31 @@ function getLokasi() {
 getLokasi();
 
 // If Province selection Re-change
-$("#provinsi").on("change", function (e) {
+$("#provinsii").on("change", function (e) {
     e.preventDefault();
     var option = $('option:selected', this).val();
     var option2 = $('option:selected', this).data('prov');
     $('#txtp').val(option2);
-    $('#kota option:gt(0)').remove();
-    $('#kecamatan').val('');
+    $('#kotaa option:gt(0)').remove();
+    $('#kecam').val('');
     $('#txtb').val('');
     $('#txtc').val('');
 
 
     if (option === '') {
         alert('null');
-        $("#kota").prop("disabled", true);
-        $("#kecamatan").prop("disabled", true);
+        $("#kotaa").prop("disabled", true);
+        $("#kecam").prop("disabled", true);
+        $('#txtc').val('');
     } else {
-        $("#kota").prop("disabled", false);
+        $("#kotaa").prop("disabled", false);
         getKota1(option);
 
     }
 });
 // Function For Get City Location
 function getKota1(idpro) {
-    var $op = $("#kota");
+    var $op = $("#kotaa");
 
     $.getJSON("daftar/kota/" + idpro, function (data) {
         $.each(data, function (i, field) {
@@ -60,18 +63,19 @@ function getKota1(idpro) {
 
 //If Selection City Re-change
 
-$("#kota").on("change", function (e) {
+$("#kotaa").on("change", function (e) {
     e.preventDefault();
     var option = $('option:selected', this).val();
     var option2 = $('option:selected', this).data('kab');
-    $('#kecamatan').val('');
+    $('#kecam').val('');
     $('#txtb').val(option2);
 
     if (option === '') {
         alert('null');
-        $("#kecamatan").prop("disabled", true);
+        $("#kecam").prop("disabled", true);
+        $('#txtc').val('');
     } else {
-        $("#kecamatan").prop("disabled", false);
+        $("#kecam").prop("disabled", false);
         getkecamatan1(option);
     }
 });
@@ -79,7 +83,7 @@ $("#kota").on("change", function (e) {
 //Function For Get Distric Location
 
 function getkecamatan1(idpro) {
-    var $op = $("#kecamatan");
+    var $op = $("#kecam");
 
     $.getJSON("daftar/kecamatan/" + idpro, function (data) {
         $.each(data, function (i, field) {
@@ -94,12 +98,12 @@ function getkecamatan1(idpro) {
 
 //Same like City Re-Change but this is Distric
 
-$("#kecamatan").on("change", function (e) {
+$("#kecam").on("change", function (e) {
     e.preventDefault();
     var option = $('option:selected', this).val();
     var option2 = $('option:selected', this).data('kec');
     $('#txtc').val(option2);
-
+    $('#form-data').attr('action', 'daftar/pendaftaran')
     if (option === '') {
         alert('null');
     }

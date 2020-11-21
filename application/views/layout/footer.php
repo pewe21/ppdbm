@@ -98,9 +98,6 @@
 <script src="<?= base_url() ?>assets/js/main.js"></script>
 <script src="<?= base_url() ?>assets/custom/js/kop.js"></script>
 
-<script>
-
-</script>
 
 </body>
 

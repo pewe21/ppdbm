@@ -5,6 +5,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Daftar extends CI_Controller
 {
 
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Daftar_model');
+    }
+
     public function index()
     {
         views("form-daftar", "Daftar|MA MA'AHID");
@@ -71,6 +78,29 @@ class Daftar extends CI_Controller
             }
         } else {
             show_404();
+        }
+    }
+
+    public function pendaftaran()
+    {
+        $post = $this->input->post();
+        $rules = $this->Daftar_model->rules;
+        $this->form_validation->set_rules($rules);
+        $this->form_validation->set_message('required', '%s harus diisi!');
+
+
+
+
+        if ($this->form_validation->run() == TRUE) {
+            $data = [
+                'tgl_daftar' => date('Y-m-d')
+            ] + $post;
+            # code...
+            $isi =  $this->Daftar_model->insert($data);
+        } else {
+
+            $this->session->set_flashdata('err', 'Mohon Perhatikan isian semua wajib diisi');
+            redirect('daftar', 'refresh');
         }
     }
 }
