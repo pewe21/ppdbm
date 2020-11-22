@@ -98,7 +98,6 @@ class Daftar extends CI_Controller
             # code...
             $isi =  $this->Daftar_model->insert($data);
         } else {
-
             $this->session->set_flashdata('err', 'Mohon Perhatikan isian semua wajib diisi');
             redirect('daftar', 'refresh');
         }
