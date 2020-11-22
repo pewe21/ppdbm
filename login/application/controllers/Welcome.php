@@ -21,9 +21,15 @@ class Welcome extends CI_Controller
 	 */
 	public function index()
 	{
-		$this->load->view('layout/header');
+
+		$data = [
+			'title' => 'Dashboard',
+			'userstot' => $this->db->query("SELECT COUNT(id_user) as isi FROM user")->row()->isi
+
+		];
+		$this->load->view('layout/header', $data);
 		$this->load->view('layout/side');
-		$this->load->view('layout/dump_con');
+		$this->load->view('layout/dump_con', $data);
 		$this->load->view('layout/footer');
 	}
 }

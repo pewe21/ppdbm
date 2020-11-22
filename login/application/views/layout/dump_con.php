@@ -5,12 +5,12 @@
          <div class="container-fluid">
              <div class="row mb-2">
                  <div class="col-sm-6">
-                     <h1 class="m-0 text-dark">@yield('title','Dashboard')</h1>
+                     <h1 class="m-0 text-dark"><?= $title ?></h1>
                  </div><!-- /.col -->
                  <div class="col-sm-6">
                      <ol class="breadcrumb float-sm-right">
                          <li class="breadcrumb-item"><a href="#">Home</a></li>
-                         <li class="breadcrumb-item active">@yield('title','Dashboard')</li>
+                         <li class="breadcrumb-item active"><?= $title ?></li>
                      </ol>
                  </div><!-- /.col -->
              </div><!-- /.row -->
@@ -29,7 +29,7 @@
                          <div class="info-box-content">
                              <span class="info-box-text">CPU Traffic</span>
                              <span class="info-box-number">
-                                 10
+                                 0
                                  <small>%</small>
                              </span>
                          </div>
@@ -44,7 +44,7 @@
 
                          <div class="info-box-content">
                              <span class="info-box-text">Likes</span>
-                             <span class="info-box-number">41,410</span>
+                             <span class="info-box-number">0</span>
                          </div>
                          <!-- /.info-box-content -->
                      </div>
@@ -61,7 +61,7 @@
 
                          <div class="info-box-content">
                              <span class="info-box-text">Sales</span>
-                             <span class="info-box-number">760</span>
+                             <span class="info-box-number">0</span>
                          </div>
                          <!-- /.info-box-content -->
                      </div>
@@ -73,8 +73,8 @@
                          <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
                          <div class="info-box-content">
-                             <span class="info-box-text">New Members</span>
-                             <span class="info-box-number">2,000</span>
+                             <span class="info-box-text">Users System</span>
+                             <span class="info-box-number"><?= $userstot ?></span>
                          </div>
                          <!-- /.info-box-content -->
                      </div>
@@ -88,7 +88,7 @@
                  <div class="col-md-12">
                      <div class="card">
                          <div class="card-header">
-                             <h5 class="card-title">Selamat Datang, {{ Auth::user()->name }} !</h5>
+                             <h5 class="card-title">Selamat Datang, -- -- !</h5>
 
                              <div class="card-tools">
                                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -99,8 +99,8 @@
                          </div>
                          <!-- /.card-header -->
                          <div class="card-body">
-                             <div class="row">
-
+                             <div class="row justify-content-center">
+                                 <img src="<?= base_url('assets') ?>/img/logoma.png" alt="">
                              </div>
                              <!-- /.row -->
                          </div>
